@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="btn-logout">Log Out</button>
+    <h1>Guess The Number</h1>
+    <button class="btn-mode" id="btn-mode">🌙</button>
+    <form action="/submit" method="post" id="tebakForm">
+        <label class="label" for="name">Masukkan Angka (1 - 10)</label>
+        <input type="text" id="tebakInput" placeholder="???" name="name" required>
+        <button type="submit" id="buttonTebak">Submit</button>
+        <button id="resetButton">Retry</button>
+        <p>Attempt : <span id="sisaTebakan">3</span></p>
+        <p><span id="resultDisplay"></span></p>
+</body>
+<script src="js/guessNumber.js"></script>
+<script src="js/switchMode.js"></script>
+<script src="js/logout.js"></script>
+</html>

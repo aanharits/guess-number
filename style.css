@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* BASE STYLE */
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #ebc2f7;
+    color: black;
+    text-align: center;
+    padding: 40px;
+    margin: 0;
+    image-rendering: pixelated;
+    margin-top: 40px; 
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px #fff;
+}
+
+form {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 24px;
+    padding: 15px;
+    width: 150px;
+    text-align: center;
+    border: 3px solid black;
+    background-color: white;
+    color: black;
+    box-shadow: 4px 4px black;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.inputForm {
+    font-size: 1px;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    padding: 15px 30px;
+    border: 2px solid black;
+    background-color: yellow;
+    color: black;
+    cursor: pointer;
+    box-shadow: 4px 4px black;
+    transition: all 0.5s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+#resetButton {
+    background-color: red;
+    margin-top: 10px;
+}
+
+#sisaTebakan {
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#resultDisplay {
+    margin-top: 15px;
+    font-size: 16px;
+    color: limegreen;
+}
+
+p {
+    font-size: 14px;
+}
+
+/* TOGGLE DARK MODE */
+.dark-mode {
+    background-color: #27003a;
+    color: white;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.dark-mode input[type="text"] {
+    background-color: black;
+    color: lime;
+    border: 3px solid white;
+    box-shadow: 4px 4px #333;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.dark-mode button {
+    background-color: #4444ff;
+    color: white;
+    border: 2px solid white;
+    box-shadow: 4px 4px #222;
+}
+
+.dark-mode .btn-mode {
+    background-color: #8888ff;
+    color: black;
+    border: 2px solid white;
+}
+
+.dark-mode #resetButton {
+    background-color: #ff4444;
+    color: white;
+    border: 2px solid white;
+}
+
+/* BUTTON MODE TOGGLE */
+.btn-mode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 14px;
+    background-color: rgb(238, 238, 0);
+    color: black;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#btn-logout {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 14px;
+    background-color: rgb(184, 3, 3);
+    color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* RESPONSIVE FOR MOBILE */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 20px;
+        margin-top: 99px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .label {
+        font-size: 12px;
+    }
+
+    input[type="text"] {
+        width: 120px;
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 12px 20px;
+    }
+
+    .btn-mode {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+
+    #btn-logout {
+        font-size: 10px;
+        padding: 10px 14px;
+    }
+}

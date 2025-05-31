@@ -158,20 +158,20 @@ p {
 @media screen and (max-width: 600px) {
     body {
         padding: 20px;
-        margin-top: 99px;
+        margin-top: 140px;
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 28px;
     }
 
-    .label {
-        font-size: 12px;
+    p {
+        font-size: 15px;
     }
 
-    input[type="number"] {
+    input {
         width: 120px;
-        font-size: 20px;
+        font-size: 15px;
     }
 
     button {

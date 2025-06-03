@@ -8,6 +8,7 @@ loginForm.addEventListener('submit', (e) => {
     const savedUsername = localStorage.getItem('usernameSignedIn');
 
     if (usernameLoginInput === savedUsername) {
+        localStorage.setItem('LoggedInUser', usernameLoginInput);
         alert(`Berhasil Login, ${usernameLoginInput}!`);
         window.location.href = 'guessNumber.html';
     } else {

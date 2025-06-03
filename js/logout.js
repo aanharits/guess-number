@@ -20,7 +20,7 @@ buttonLogout.addEventListener('click', (e) => {
 
     localStorage.removeItem('usernameSignedIn');
     alert('Berhasil Logout!');
-    window.location.href = 'signin.html';
+    window.location.href = 'index.html';
 });
 
 // Logic Redirect ke Page Tebak Angka

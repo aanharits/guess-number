@@ -5,7 +5,6 @@ userForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const usernameByInput = document.getElementById('username').value;
-    console.log(usernameByInput);
 
     if (usernameByInput) {
         localStorage.setItem('usernameSignedIn', usernameByInput);

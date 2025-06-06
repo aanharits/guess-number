@@ -1,39 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const tebakAngkaForm = document.getElementById('tebakForm');
+    const resultDisplay = document.getElementById('resultDisplay');
+    const sisaTebakanDisplay = document.getElementById('sisaTebakan');
+    const buttonTebak = document.getElementById('buttonTebak');
+    const resetButton = document.getElementById('resetButton');
 
-    tebakAngkaForm.addEventListener('submit', (e) => {
+    let sisaTebakan = 3;
+
+    const disableGame = () => {
+        tebakInput.disabled = true;
+        buttonTebak.disabled = true;
+    };
+    
+    const resetGame = () => {
+        tebakInput.value = '';
+        resultDisplay.innerText = '';
+        resultDisplay.style.color = 'black';
+        sisaTebakan = 3;
+        sisaTebakanDisplay.innerText = sisaTebakan;
+        tebakInput.disabled = false;
+        buttonTebak.disabled = false;
+    };
+
+    const handleGuess = (e) => {
         e.preventDefault();
 
-        const userGuess = parseInt(document.getElementById('tebakInput').value);
+        const userGuess = document.getElementById('tebakInput').value;
         const randomNumber = Math.floor(Math.random() * 10) + 1;
-        const resultDisplay = document.getElementById('resultDisplay');
-        const sisaTebakan = document.getElementById('sisaTebakan').innerText--;
 
-        document.getElementById('resetButton').addEventListener('click', (e) => {
-            e.preventDefault();
-            document.getElementById('tebakInput').value = '';
-            resultDisplay.innerText = '';
-            resultDisplay.style.color = 'black';
-            document.getElementById('sisaTebakan').innerText = 3; // Reset sisa tebakan
-            document.getElementById('tebakInput').disabled = false;
-            document.getElementById('buttonTebak').disabled = false;
-            // const buttonTebak = document.getElementById('buttonTebak');
-            // if (!buttonTebak) {
-            //     const newButton = document.createElement('button');
-            //     newButton.id = 'buttonTebak';
-            //     newButton.innerText = 'Tebak Angka';
-            //     newButton.type = 'submit';
-            //     tebakAngkaForm.appendChild(newButton);
-            // }
-        });
-
-        if (sisaTebakan === 0) {
+        if (sisaTebakan <= 0) {
             alert('Kesempatan Anda sudah habis! Silakan coba lagi.');
-            resultDisplay.style.color = 'grey';
-            document.getElementById('buttonTebak').disabled = true;
-            document.getElementById('tebakInput').disabled = true;
-            document.getElementById('sisaTebakan').innerText = 0;
+            disableGame();
             return;
         }
 
@@ -43,9 +40,26 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (userGuess === randomNumber) {
             resultDisplay.innerText = `Selamat! Tebakan Anda benar: ${randomNumber}`;
             resultDisplay.style.color = 'green';
+            disableGame();
         } else {
-            resultDisplay.innerText = `Tebakan Anda salah. Angka yang benar adalah: ${randomNumber}`;
+            resultDisplay.innerText = `Tebakan salah! Angka yang benar adalah: ${randomNumber}`;
             resultDisplay.style.color = 'red';
+            sisaTebakan--;
+            sisaTebakanDisplay.innerText = sisaTebakan;
+
+            if (sisaTebakan === 0) {
+                alert('Kesempatan Anda sudah habis! Silakan coba lagi.');
+                disableGame();
+            }
         }
-    })
-})
+    };
+
+    tebakAngkaForm.addEventListener('submit', handleGuess);
+
+    resetButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        resetGame();
+    });
+});
+
+
